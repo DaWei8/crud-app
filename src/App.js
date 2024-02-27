@@ -1,5 +1,11 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
-
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import Blogs from "./Blogs";
+import CreateBlog from "./CreateBlog";
+import EditBlog from "./EditBlog";
+import Signup from "./Signup";
+import Login from "./Login";
 
 function App() {
   return (
@@ -11,7 +17,8 @@ function App() {
          <Route path="/home" element={<Home />} />
          <Route path="/blogs" element={<Blogs />} />
          <Route path="/createblog" element={<CreateBlog />} />
-         <Route path="/signup" element={<SignUp />} />
+         <Route path="/createblog" element={<EditBlog />} />
+         <Route path="/signup" element={<Signup />} />
          <Route path="/login" element={<Login />} />
        </Routes>
      </Router>
