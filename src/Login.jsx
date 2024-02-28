@@ -14,52 +14,61 @@ export default function Login() {
       .post("http://localhost:3001/login", { email, password })
       .then((result) => {
         console.log(result);
-        result.data === "Success" ? navigate("/home") : console.log("")
+        result.data === "Success" ? navigate("/home") : console.log("");
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className=" d-flex justify-content-center align-items-center bg-secondary vh-100 ">
-      <div className="bg-white p-3 rounded w-50 ">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit} action="POST">
-          <div className="mb-3">
-            <label htmlFor="email">
-              <strong>Email</strong>
-            </label>
-            <input
-              name="email"
-              autoComplete="off"
-              placeholder="Enter Email"
-              className="form-control rounded-0"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+    <div className="flex flex-row justify-center  items-center bg-[#edeff0] h-[100vh] ">
+      <div className="bg-white p-[20px] rounded w-[50%]  min-w-[300px] ">
+        <h3 className=" text-[28px] font-semibold mb-[10px]">Login</h3>
+        <form
+          className=" flex flex-col gap-[20px] "
+          onSubmit={handleSubmit}
+          action="POST"
+        >
+          <div className=" flex flex-col gap-[10px] ">
+            <div className=" gap-[5px] flex flex-col ">
+              <label htmlFor="email">
+                <strong>Email</strong>
+              </label>
+              <input
+                name="email"
+                autoComplete="off"
+                placeholder="Enter Email"
+                className=" pl-[8px] h-[40px] border-[#e4e4e4] border-solid border-[1px] rounded  "
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className=" gap-[5px] flex flex-col ">
+              <label htmlFor="password">
+                <strong>Password</strong>
+              </label>
+              <input
+                name="password"
+                autoComplete="off"
+                placeholder="Enter Password"
+                className=" pl-[8px] h-[40px] border-[#e4e4e4] border-solid border-[1px] rounded  "
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="password">
-              <strong>Password</strong>
-            </label>
-            <input
-              name="password"
-              autoComplete="off"
-              placeholder="Enter Password"
-              className="form-control rounded-0"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <button type="submit" className="btn btn-success w-100 rounded-0">
+          <button
+            type="submit"
+            className="text-[#fff] px-[30px] max-w-[250px] justify-center h-[40px] flex items-center rounded-md bg-[#1e9daf]"
+          >
             Login
           </button>
           <p>Don&#39;t Have an Account</p>
 
           <Link
             to={"/register"}
-            className=" btn btn-default border w-100 bg-light rounded-0 "
+            className=" border-[#e4e4e4] border-solid border-[1px] px-[30px] max-w-[250px] justify-center h-[40px] flex items-center rounded-md"
           >
             Sign Up
           </Link>
