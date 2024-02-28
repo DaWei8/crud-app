@@ -7,8 +7,8 @@ export default function ViewBlog() {
   const navigate = useNavigate();
 
   return (
-    <div className=" flex flex-col justify-center p-[30px] bg-white w-[100vw] " >
-    <div className=" max-w-[1024px] rounded-[10px] flex flex-auto flex-col min-h-[80dvh] pt-[30px] px-[50px] mt-[80px] bg-[#f5f5f5] ">
+    <div className=" flex flex-col justify-center items-center bg-white " >
+    <div className=" w-[80%] min-w-[350px] rounded-[10px] flex  flex-col min-h-[80dvh] pt-[30px] px-[50px] mt-[80px] bg-[#f5f5f5] ">
       <div className=" flex justify-between " >
         <Link to={"/blogs"} className=" flex gap-[8px] text-[16pxs] items-center justify-center " >
           <img src={backButton} alt="back button" />
