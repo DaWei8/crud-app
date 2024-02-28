@@ -60,15 +60,15 @@ export default function Login() {
 
           <button
             type="submit"
-            className="text-[#fff] px-[30px] max-w-[250px] justify-center h-[40px] flex items-center rounded-md bg-[#1e9daf]"
+            className="text-[#fff] px-[30px] justify-center h-[40px] flex items-center rounded-md bg-[#1e9daf]"
           >
             Login
           </button>
           <p>Don&#39;t Have an Account</p>
 
           <Link
-            to={"/register"}
-            className=" border-[#e4e4e4] border-solid border-[1px] px-[30px] max-w-[250px] justify-center h-[40px] flex items-center rounded-md"
+            to={"/signup"}
+            className=" border-[#e4e4e4] border-solid border-[1px] px-[30px] justify-center h-[40px] flex items-center rounded-md"
           >
             Sign Up
           </Link>
