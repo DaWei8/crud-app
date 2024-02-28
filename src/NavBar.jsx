@@ -1,33 +1,24 @@
 import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className=" pe-5 container-fluid">
-        <Link className="navbar-brand" to={"/"}>
-          Blogga
+    <nav className=" sticky top-0  z-40 bg-[#1e9daf] min-w-[320px]  text-[#fff] h-[80px] flex px-[20px] justify-center w-[100vw] flex-auto flex-row items-center ">
+      <div className=" flex flex-auto justify-between ">
+        <Link className=" text-[18px] font-semibold " to={"/"}>
+          Notashi
         </Link>
+        <div className=" flex ">
+          <ul className=" flex gap-[20px] ">
+            <Link className=" flex justify-center items-center " to={"/home"}>
+              Home
+            </Link>
 
-        <div className="" id="navbarNav">
-          <ul className=" d-flex gap-5 ">
-            <li className="nav-item">
-              <Link
-                className="nav-link active"
-                aria-current="page"
-                to={"/home"}
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/blogs">
-                Blogs
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login | Register
-              </Link>
-            </li>
+            <Link className="flex justify-center items-center " to="/blogs">
+              Notes
+            </Link>
+
+            <Link className="flex justify-center items-center  " to="/login">
+              Login | Register
+            </Link>
           </ul>
         </div>
       </div>
