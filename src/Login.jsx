@@ -2,25 +2,28 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
+  const { setIsAuthenticated } = useAuth()
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:3001/login", { email, password })
       .then((result) => {
-        console.log(result);
+        setIsAuthenticated(true)
         result.data === "Success" ? navigate("/home") : console.log("");
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="flex flex-row justify-center  items-center bg-[#edeff0] h-[100vh] ">
+    <div className="flex flex-row justify-center  items-center h-[85vh] rounded-[10px] mt-[10px] bg-[#f2f5f7] ">
       <div className="bg-white p-[20px] rounded w-[50%]  min-w-[300px] ">
         <h3 className=" text-[28px] font-semibold mb-[10px]">Login</h3>
         <form

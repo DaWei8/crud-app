@@ -18,7 +18,7 @@ export default function EditBlog() {
           })
           .then((response) => {
             console.log(response);
-            navigate(-1);
+            navigate("/blogs");
           })
           .catch((error) => {
             console.error(error);
@@ -48,7 +48,7 @@ export default function EditBlog() {
   });
 
   return (
-    <div className="flex flex-row justify-center  items-center bg-[#edeff0] h-[100vh] ">
+    <div className="flex flex-row justify-center  items-center h-[85vh] rounded-[10px] mt-[10px] bg-[#f2f5f7] ">
       <div className="bg-white p-[20px] rounded w-[50%]  min-w-[300px] ">
         <h3 className=" text-[28px] font-semibold mb-[10px] ">Edit Note</h3>
         <form

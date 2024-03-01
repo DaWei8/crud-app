@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 
 export default function CreateBlog() {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
   const navigate = useNavigate();
+ 
 
   const handleCreateBlog = (e) => {
     e.preventDefault();
@@ -26,7 +28,7 @@ export default function CreateBlog() {
   };
 
   return (
-    <div className="flex flex-row justify-center  items-center bg-[#edeff0] h-[100vh] ">
+    <div className="flex flex-row justify-center rounded-[10px] mt-[10px] bg-[#f2f5f7] items-center  h-[85vh] ">
       <div className="bg-white p-[20px] rounded w-[50%]  min-w-[300px] ">
         <h3 className=" text-[28px] mb-[10px] font-semibold ">New Note</h3>
         <form
@@ -67,14 +69,21 @@ export default function CreateBlog() {
               ></textarea>
             </div>
           </div>
-
-          <button
-            type="submit"
-            onClick={handleCreateBlog}
-            className="text-[#fff] px-[30px] w-fit h-[40px] flex items-center rounded-md bg-[#1e9daf] "
-          >
-            Create Note
-          </button>
+          <div className=" flex flex-row justify-between ">
+            <button
+              type="submit"
+              onClick={handleCreateBlog}
+              className="text-[#fff] px-[30px] w-fit h-[40px] flex items-center rounded-md bg-[#1e9daf] "
+            >
+              Create Note
+            </button>
+            <button
+              onClick={() => navigate("./")}
+              className=" bg-[#f5f7f8] px-[30px] w-fit h-[40px] flex items-center rounded-md  "
+            >
+              Go back
+            </button>
+          </div>
         </form>
       </div>
     </div>

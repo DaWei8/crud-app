@@ -2,7 +2,7 @@ import Blogs from "./Blogs";
 
 export default function Home() {
   return (
-    <div className=" px-[40px] pt-[120px] ">
+    <div className=" px-[120px] pt-[120px] rounded-[10px] mt-[10px] bg-[#f2f5f7] ">
       <div className=" flex flex-col gap-[20px] items-center justify-center ">
         <h1 className=" text-[48px] font-semibold ">Welcome to Notashi</h1>
         <p className=" md:text-center max-w-[960px] ">
